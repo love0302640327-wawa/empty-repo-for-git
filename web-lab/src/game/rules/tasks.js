@@ -14,5 +14,22 @@ import { GYOZA_IDS } from '../menu.js';
 //             report.profit      今天的淨利（不含獎金）
 // 回傳：'done'（達成）| 'failed'（沒達成）| 'wip'（施工中）
 export function checkTask(task, report) {
-  return 'wip';
+  const result = (ok) => (ok ? 'done' : 'failed');
+
+  switch (task?.id) {
+    case 'zero-waste': // 第 1 天：零報廢
+      return result(report.wasteTotal === 0);
+    case 'no-soldout-leave': // 第 2 天：沒有任何客人因為賣完而什麼都沒買
+      return result(!report.visits.some((v) => v.outcome === 'sold_out'));
+    case 'gyoza-30': { // 第 3 天：單日賣出 30 份以上鍋貼（三種合計）
+      const gyozaSold = GYOZA_IDS.reduce((sum, id) => sum + (report.sold[id] ?? 0), 0);
+      return result(gyozaSold >= 30);
+    }
+    case 'stars-4': // 第 4 天：打烊後星等達到 4 顆以上
+      return result(report.starsAfter >= 4);
+    case 'profit-800': // 第 5 天：單日淨利 800 元以上（不含獎金）
+      return result(report.profit >= 800);
+    default:
+      return 'wip';
+  }
 }
