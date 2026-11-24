@@ -1,9 +1,15 @@
 {
-  "//": "專案層 MCP 設定。用 Claude Code 打開這個資料夾時會問你是否啟用；啟用後輸入 /mcp 應該看到 chrome-devtools。它讓 AI 能自己打開 http://localhost:5180、操作遊戲、讀 console、截圖。",
+  "//": "專案層 MCP 設定。用 Claude Code 打開這個資料夾時會問你是否啟用；啟用後輸入 /mcp 應該看到 chrome-devtools。它讓 AI 能自己打開 http://localhost:5180、操作遊戲、讀 console、截圖。版本固定在 1.13.0，讓全班環境一致；要升級時改 args 裡的版本號，測過再 commit。-y 讓 npx 第一次下載時不用停下來問 Ok to proceed。memory 是 MCP 官方（modelcontextprotocol）的 Memory 伺服器，讓 AI 把記住的事存成知識圖譜，只給 AI 用，跟遊戲無關，不會讓遊戲存檔。",
   "mcpServers": {
     "chrome-devtools": {
+      "type": "stdio",
       "command": "npx",
-      "args": ["chrome-devtools-mcp@latest"]
+      "args": ["-y", "chrome-devtools-mcp@1.13.0"]
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory@2.1.0"]
     }
   }
 }
