@@ -1,0 +1,11 @@
+{
+  "name": "v7：以 v6 為基準，第 2 天玉米下架、上架酸辣湯 11 份、韭菜 10→5",
+  "pack": "official",
+  "days": [
+    { "items": [ { "name": "招牌鍋貼", "qty": 10, "price": 70 }, { "name": "韭菜鍋貼", "qty": 6, "price": 70 }, { "name": "紅茶", "qty": 10, "price": 25 }, { "name": "豆漿", "qty": 8, "price": 25 } ], "promoCost": 0 },
+    { "items": [ { "name": "招牌鍋貼", "qty": 10, "price": 70 }, { "name": "韭菜鍋貼", "qty": 5, "price": 70 }, { "name": "紅茶", "qty": 10, "price": 25 }, { "name": "酸辣湯", "qty": 11, "price": 35 } ], "promoCost": 0 },
+    { "items": [ { "name": "招牌鍋貼", "qty": 22, "price": 70 }, { "name": "韭菜鍋貼", "qty": 10, "price": 70 }, { "name": "紅茶", "qty": 10, "price": 25 } ], "promoCost": 0 },
+    { "items": [ { "name": "招牌鍋貼", "qty": 10, "price": 70 }, { "name": "韭菜鍋貼", "qty": 10, "price": 70 }, { "name": "玉米鍋貼", "qty": 10, "price": 80 }, { "name": "紅茶", "qty": 10, "price": 25 } ], "promoCost": 0 },
+    { "items": [ { "name": "招牌鍋貼", "qty": 17, "price": 70 }, { "name": "玉米鍋貼", "qty": 28, "price": 80 }, { "name": "紅茶", "qty": 14, "price": 25 }, { "name": "酸辣湯", "qty": 21, "price": 35 } ], "promoCost": 0 }
+  ]
+}
